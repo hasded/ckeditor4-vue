@@ -20,8 +20,8 @@ updateCdnLink( path.resolve( __dirname, '..', 'karma.conf.js' ) );
 
 function updateCdnLink( path ) {
 	const file = fs.readFileSync( path, 'utf8' );
-	const cdnLinkRegex = /https:\/\/cdn\.ckeditor\.com\/\d\.\d+\.\d+/g;
+	const cdnLinkRegex = /https:\/\/cdn\.ckeditor\.com\/\d+\.\d+\.\d+/g;
 
 	fs.writeFileSync( path,
-		file.replace( cdnLinkRegex, `https://cdn.ckeditor.com/${ version }` ), 'utf8' );
+		file.replace( cdnLinkRegex, `https://cdnjs.cloudflare.com/ajax/libs/ckeditor/${ version }/ckeditor.js` ), 'utf8' );
 }
